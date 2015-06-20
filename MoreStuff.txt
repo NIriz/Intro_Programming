@@ -1,0 +1,64 @@
+#1
+Write a program that checks if the sequence of characters "lab" exists in the following strings. If it does exist, print out the word.
+
+"laboratory"
+"experiment"
+"Pans Labyrinth"
+"elaborate"
+"polar bear"
+
+arr = ["laboratory", "experiment", "Pans Labyrinth", "elaborate", "polar bear"]
+
+arr.select { |s| s.include? 'lab' }
+
+
+
+#2
+What will the following program print to the screen? What will it return?
+
+def execute(&block)
+  block
+end
+
+execute { puts "Hello from inside the execute method!" }
+
+
+It will print "Hello from inside the execute method!" and return nil.
+WRONG: Nothing is printed to the screen because the block is never activated 
+with the .call method. The method returns a Proc object.
+
+
+
+#3
+What is exception handling and what problem does it solve?
+A way to work with tricky code that might produce weird results, you can contain
+the portion that may go wrong and isolate it instead of ruining the rest of the code.
+"It is a way of handling the error by changing the flow of control without exiting the program entirely."
+
+
+#4
+Modify the code in exercise 2 to make the block execute properly.
+
+def execute(&block)
+  block.call
+end
+
+execute { puts "Hello from inside the execute method!" }
+
+
+#5
+Why does the following code...
+
+def execute(block)
+  block.call
+end
+
+execute { puts "Hello from inside the execute method!" }
+
+Give us the following error when we run it?
+
+block.rb1:in `execute': wrong number of arguments (0 for 1) (ArgumentError)
+from test.rb:5:in `<main>'
+
+
+No ampersand was added to 'block', so the program doesn't recognize it as anything since it also wasn't defined as a variable. 

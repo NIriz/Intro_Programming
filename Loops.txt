@@ -1,0 +1,47 @@
+#1
+What does the each method in the following program return after it is finished executing?
+
+x = [1, 2, 3, 4, 5]
+x.each do |a|
+  a + 1
+end
+
+Should return [2,3,4,5,6] WRONG! 
+It actually returns [1, 2, 3, 4, 5], remember that we're not storing the 'new' +1 values anywhere.
+
+
+#2
+Write a while loop that takes input from the user, performs an action, and only stops when the user types "STOP". Each loop can get info from the user.
+
+puts "Say whatever you want, when you get tired of talking, say: STOP"
+
+a = " "
+while a != 'STOP'
+  a = gets.chomp
+end
+
+
+#3
+Use the each_with_index method to iterate through an array of your creation that prints each index and value of the array.
+
+x = ['dog', 'cat', 'pig', 'eel']
+
+x.each_with_index do |name, index|
+  puts "#{index}. #{name}"
+end   
+
+
+#4
+Write a method that counts down to zero using recursion.
+
+def countdown(start)
+  if start <= 0
+    puts number
+  else
+    puts number  
+    countdown(start - 1)
+  end
+end    
+
+puts countdown(10)
+
